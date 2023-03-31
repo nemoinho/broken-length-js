@@ -1,0 +1,13 @@
+= Broken length JS
+
+[abstract]
+Oh now, `Array.length` is broken, how can we know the amount of anything, now?
+
+This project is a quiz that forces you to think outside the box.
+In fact the property `.length` is arguably one of the most important features of javascript at all.
+However in our Scenario the length-method is broken and will always return another value, but rarely the correct one.
+
+Your task is the development of an method which will return the correct length of an array without the usage of `.length`.
+To identify a correct solution I've defined a bunch of tests, which can be used to check your solution.
+
+
