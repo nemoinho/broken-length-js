@@ -10,4 +10,7 @@ However in our Scenario the length-method is broken and will always return anoth
 Your task is the development of an method which will return the correct length of an array without the usage of `.length`.
 To identify a correct solution I've defined a bunch of tests, which can be used to check your solution.
 
+Just implement the function in `xref:index.js[]` and execute the tests to check your implementation.
 
+[source,bash]
+node index.spec
