@@ -42,49 +42,57 @@ it(
 );
 
 function arrayWithDefinedLength(arr) {
-  const mock = [...arr];
-  const readLength = arr.length;
-  Object.defineProperty(arr, 'length', {
-    value: 2,
-    writable: false
-  });
-  arr.at = (...args) => mock.at.apply(mock, args)
-  arr.concat = (...args) => mock.concat.apply(mock, args)
-  arr.copyWithin = (...args) => mock.copyWithin.apply(mock, args)
-  arr.entries = (...args) => mock.entries.apply(mock, args)
-  arr.every = (...args) => mock.every.apply(mock, args)
-  arr.fill = (...args) => mock.fill.apply(mock, args)
-  arr.filter = (...args) => mock.filter.apply(mock, args)
-  arr.find = (...args) => mock.find.apply(mock, args)
-  arr.findIndex = (...args) => mock.findIndex.apply(mock, args)
-  arr.findLast = (...args) => mock.findLast.apply(mock, args)
-  arr.findLastIndex = (...args) => mock.findLastIndex.apply(mock, args)
-  arr.flat = (...args) => mock.flat.apply(mock, args)
-  arr.flatMap = (...args) => mock.flatMap.apply(mock, args)
-  arr.forEach = (...args) => mock.forEach.apply(mock, args)
-  arr.group = (...args) => mock.group.apply(mock, args)
-  arr.groupToMap = (...args) => mock.groupToMap.apply(mock, args)
-  arr.includes = (...args) => mock.includes.apply(mock, args)
-  arr.indexOf = (...args) => mock.indexOf.apply(mock, args)
-  arr.join = (...args) => mock.join.apply(mock, args)
-  arr.keys = (...args) => mock.keys.apply(mock, args)
-  arr.lastIndexOf = (...args) => mock.lastIndexOf.apply(mock, args)
-  arr.map = (...args) => mock.map.apply(mock, args)
-  arr.pop = (...args) => mock.pop.apply(mock, args)
-  arr.push = (...args) => mock.push.apply(mock, args)
-  arr.reduce = (...args) => mock.reduce.apply(mock, args)
-  arr.reduceRight = (...args) => mock.reduceRight.apply(mock, args)
-  arr.reverse = (...args) => mock.reverse.apply(mock, args)
-  arr.shift = (...args) => mock.shift.apply(mock, args)
-  arr.slice = (...args) => mock.slice.apply(mock, args)
-  arr.some = (...args) => mock.some.apply(mock, args)
-  arr.sort = (...args) => mock.sort.apply(mock, args)
-  arr.splice = (...args) => mock.splice.apply(mock, args)
-  arr.toLocaleString = (...args) => mock.toLocaleString.apply(mock, args)
-  arr.toString = (...args) => mock.toString.apply(mock, args)
-  arr.unshift = (...args) => mock.unshift.apply(mock, args)
-  arr.values = (...args) => mock.values.apply(mock, args)
-  return arr;
+  return {
+    0: arr[0],
+    1: arr[1],
+    2: arr[2],
+    3: arr[3],
+    4: arr[4],
+    5: arr[5],
+    6: arr[6],
+    7: arr[7],
+    8: arr[8],
+    9: arr[9],
+    get length() {
+      return Math.floor(Math.random() * 100);
+    },
+    at: (...args) => arr.at.apply(arr, args),
+    concat: (...args) => arr.concat.apply(arr, args),
+    copyWithin: (...args) => arr.copyWithin.apply(arr, args),
+    entries: (...args) => arr.entries.apply(arr, args),
+    every: (...args) => arr.every.apply(arr, args),
+    fill: (...args) => arr.fill.apply(arr, args),
+    filter: (...args) => arr.filter.apply(arr, args),
+    find: (...args) => arr.find.apply(arr, args),
+    findIndex: (...args) => arr.findIndex.apply(arr, args),
+    findLast: (...args) => arr.findLast.apply(arr, args),
+    findLastIndex: (...args) => arr.findLastIndex.apply(arr, args),
+    flat: (...args) => arr.flat.apply(arr, args),
+    flatMap: (...args) => arr.flatMap.apply(arr, args),
+    forEach: (...args) => arr.forEach.apply(arr, args),
+    group: (...args) => arr.group.apply(arr, args),
+    groupToMap: (...args) => arr.groupToMap.apply(arr, args),
+    includes: (...args) => arr.includes.apply(arr, args),
+    indexOf: (...args) => arr.indexOf.apply(arr, args),
+    join: (...args) => arr.join.apply(arr, args),
+    keys: (...args) => arr.keys.apply(arr, args),
+    lastIndexOf: (...args) => arr.lastIndexOf.apply(arr, args),
+    map: (...args) => arr.map.apply(arr, args),
+    pop: (...args) => arr.pop.apply(arr, args),
+    push: (...args) => arr.push.apply(arr, args),
+    reduce: (...args) => arr.reduce.apply(arr, args),
+    reduceRight: (...args) => arr.reduceRight.apply(arr, args),
+    reverse: (...args) => arr.reverse.apply(arr, args),
+    shift: (...args) => arr.shift.apply(arr, args),
+    slice: (...args) => arr.slice.apply(arr, args),
+    some: (...args) => arr.some.apply(arr, args),
+    sort: (...args) => arr.sort.apply(arr, args),
+    splice: (...args) => arr.splice.apply(arr, args),
+    toLocaleString: (...args) => arr.toLocaleString.apply(arr, args),
+    toString: (...args) => arr.toString.apply(arr, args),
+    unshift: (...args) => arr.unshift.apply(arr, args),
+    values: (...args) => arr.values.apply(arr, args),
+  }
 }
 
 function format(start, end) {
