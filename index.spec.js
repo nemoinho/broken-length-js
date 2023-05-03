@@ -87,21 +87,27 @@ function arrayWithDefinedLength(arr) {
   return arr;
 }
 
+function format(start, end) {
+  return str => `${start}${str}${end}`
+}
 
 function it(description, fn) {
+  const green = format('\x1b[0;32m', '\x1b[0m');
+  const red = format('\x1b[0;31m', '\x1b[0m');
   try {
     fn();
-    console.log(`it ${description}`);
+    console.log(green(`it ${description} ✓`));
   } catch(e) {
-    console.error(`it ${description}`);
-    console.error(`  ${e.message}`);
+    console.error(red(`it ${description} ✖`));
+    console.error(`  ${e.message}\n`);
   }
 }
 
 function expect(value) {
+  const boldYellow = format('\x1b[1;33m', '\x1b[0m')
   const assert = (v1, v2) => {
     if (v1 !== v2)
-      throw new Error(`expected ${v2} but received ${v1}`);
+      throw new Error(`expected ${boldYellow(v2)} but received ${boldYellow(v1)}`);
   }
   return {
     toBe: (expectedValue) => assert(value, expectedValue),
