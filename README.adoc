@@ -1,4 +1,5 @@
 = Broken length JS
+:icons: font
 
 [abstract]
 Oh now, `Array.length` is broken, how can we know the amount of anything, now?
@@ -13,4 +14,4 @@ To identify a correct solution I've defined a bunch of tests, which can be used 
 Just implement the function in `xref:index.js[]` and execute the tests to check your implementation.
 
 [source,bash]
-node index.spec
+npm test
