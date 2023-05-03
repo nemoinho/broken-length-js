@@ -106,7 +106,7 @@ function expect(value) {
   return {
     toBe: (expectedValue) => assert(value, expectedValue),
     toThrow: (errorType) => {
-      errorType = errorType ?? Error
+      errorType = errorType ? errorType : Error
       let result;
       try {
         value();
